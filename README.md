@@ -84,7 +84,7 @@ yarn run lint
 
 ### 测试用户名密码
 1. admin/123456
-第三方
+家用电脑
 ## 许可证
 
 Wetech-Admin 使用 MIT 许可证发布，用户可以自由使用、复制、修改、合并、出版发行、散布、再授权及贩售Wetech-Admin 及其副本。
