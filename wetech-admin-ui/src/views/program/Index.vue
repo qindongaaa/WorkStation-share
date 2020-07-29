@@ -10,13 +10,13 @@
             type="inner"
             @openChange="onOpenChange"
           >
-            <a-menu-item key="/program/procreate/newprogram">
-              <router-link to="/program/procreate/newprogram">
+            <a-menu-item key="/Program/procreate/newprogram">
+              <router-link to="/Program/procreate/newprogram">
                 新项目填报
               </router-link>
             </a-menu-item>
-            <a-menu-item key="/program/procreate/weekly">
-              <router-link to="/program/procreate/weekly">
+            <a-menu-item key="/Program/procreate/weekly">
+              <router-link to="/Program/procreate/weekly">
                 周报填报
               </router-link>
             </a-menu-item>

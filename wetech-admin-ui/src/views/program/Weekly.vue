@@ -2,7 +2,7 @@
   <div class="account-settings-info-view">
     <a-table :columns="columns" :data-source="data" bordered>
       <a slot="name" slot-scope="text">{{ text }}</a>
-      <span slot="action" slot-scope="text, record">
+      <span slot="action" slot-scope="text,record">
         <a @click="() => fillin(record.key)">填报</a>
       </span>
     </a-table>
@@ -57,7 +57,7 @@ export default {
         })
     },
     fillin (key) {
-      this.$router.push({ name: 'programcreate' })
+      this.$router.push({ name: 'WeeklyCreate', params: { valueid: key } })
     }
   }
 }

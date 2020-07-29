@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import {BasicLayout, BlankLayout, PageView, RouteView, UserLayout} from '@/layouts'
 import { bxAnaalyse } from '@/core/icons'
-
+// 此处配置的路由，尽可能配齐name、path参数，并在web页面权限管理处对应配置
 export const asyncRouterMap = [
 
   {
@@ -154,31 +154,39 @@ export const asyncRouterMap = [
 
       // program
       {
-        path: '/program',
+        path: '/Program',
         component: RouteView,
-        redirect: '/program/procreate',
-        name: 'program',
+        redirect: '/Program/procreate',
+        name: 'Program',
         meta: { title: '测试', icon: 'warning', keepAlive: true, permission: ['user'] },
         children: [
           {
-            path: '/program/procreate',
-            name: 'programcreate',
+            path: '/Program/procreate',
+            name: 'Programcreate',
             component: () => import('@/views/program/Index'),
             meta: { title: '测试页', keepAlive: true, permission: ['user'] },
-            redirect: '/program/procreate/newprogram',
+            redirect: '/Program/procreate/newprogram',
             hideChildrenInMenu: true,
             children: [
               {
-                path: '/program/procreate/newprogram',
+                path: '/Program/procreate/newprogram',
                 name: 'Newprogram',
                 component: () => import('@/views/program/Newprogram'),
                 meta: { title: '新项目填报', permission: ['user'] }
               },
               {
-                path: '/program/procreate/weekly',
+                path: '/Program/procreate/weekly',
                 name: 'Weekly',
                 component: () => import('@/views/program/Weekly'),
-                meta: { title: '周报填报', permission: ['user'] }
+                meta: { title: '周报填报', permission: ['user'] },
+                children: [
+                  {
+                    path: '/Program/procreate/weeklycreate',
+                    name: 'WeeklyCreate',
+                    component: () => import('@/views/program/WeeklyCreate'),
+                    meta: { title: '周报填报', permission: ['user'] }
+                  }
+                ]
               }
             ]
           }
@@ -190,7 +198,6 @@ export const asyncRouterMap = [
     path: '*', redirect: '/404', hidden: true
   }
 ]
-
 /**
  * 基础路由
  * @type { *[] }

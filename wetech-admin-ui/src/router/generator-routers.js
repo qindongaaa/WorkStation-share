@@ -39,7 +39,8 @@ const constantRouterComponents = {
   // program
   'ProgramCreate': () => import('@/views/program/Index'),
   'Newprogram': () => import('@/views/program/Newprogram'),
-  'Weekly': () => import('@/views/program/Weekly')
+  'Weekly': () => import('@/views/program/Weekly'),
+  'WeeklyCreate': () => import('@/views/program/WeeklyCreate')
 }
 
 // 前端未找到页面路由（固定不用改）

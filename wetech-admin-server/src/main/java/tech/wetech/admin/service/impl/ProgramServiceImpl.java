@@ -78,7 +78,7 @@ public class ProgramServiceImpl implements ProgramService {
         List<ProgramBaseInfo> program = programMapper.selectByCreaterid(id);
         for(int i =0;i<program.size();i++){
             JSONObject obj = new JSONObject();
-            obj.put("key",i);
+            obj.put("key",program.get(i).getId());
             obj.put("programname",program.get(i).getProgramname());
             obj.put("programbrief",program.get(i).getProgrambrief());
             obj.put("programduration",program.get(i).getProgramduration());
