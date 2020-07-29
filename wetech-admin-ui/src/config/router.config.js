@@ -162,7 +162,7 @@ export const asyncRouterMap = [
         children: [
           {
             path: '/program/procreate',
-            name: 'ProgramCreate',
+            name: 'programcreate',
             component: () => import('@/views/program/Index'),
             meta: { title: '测试页', keepAlive: true, permission: ['user'] },
             redirect: '/program/procreate/newprogram',

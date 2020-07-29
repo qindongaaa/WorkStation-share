@@ -76,14 +76,15 @@ public class ProgramServiceImpl implements ProgramService {
     public ResDTO getCurUserProgramInfo(Long id) {
         JSONArray array = new JSONArray();
         List<ProgramBaseInfo> program = programMapper.selectByCreaterid(id);
-        for(ProgramBaseInfo p:program){
+        for(int i =0;i<program.size();i++){
             JSONObject obj = new JSONObject();
-            obj.put("programname",p.getProgramname());
-            obj.put("programbrief",p.getProgrambrief());
-            obj.put("programduration",p.getProgramduration());
-            obj.put("programquota",p.getProgramquota());
-            obj.put("programstarttime",toDateTimeString(p.getStarttime()));
-            obj.put("programmag",p.getProgrammag());
+            obj.put("key",i);
+            obj.put("programname",program.get(i).getProgramname());
+            obj.put("programbrief",program.get(i).getProgrambrief());
+            obj.put("programduration",program.get(i).getProgramduration());
+            obj.put("programquota",program.get(i).getProgramquota());
+            obj.put("programstarttime",toDateTimeString(program.get(i).getStarttime()));
+            obj.put("programmag",program.get(i).getProgrammag());
             array.add(obj);
         }
         ResDTO res = new ResDTO();

@@ -2,6 +2,9 @@
   <div class="account-settings-info-view">
     <a-table :columns="columns" :data-source="data" bordered>
       <a slot="name" slot-scope="text">{{ text }}</a>
+      <span slot="action" slot-scope="text, record">
+        <a @click="() => fillin(record.key)">填报</a>
+      </span>
     </a-table>
   </div>
 </template>
@@ -52,6 +55,9 @@ export default {
             notification.error(config)
           }
         })
+    },
+    fillin (key) {
+      this.$router.push({ name: 'programcreate' })
     }
   }
 }
@@ -59,28 +65,39 @@ const columns = [
   {
     title: '项目名称',
     dataIndex: 'programname',
+    key: 'programname',
     scopedSlots: { customRender: 'name' }
   },
   {
     title: '项目简介',
     dataIndex: 'programbrief',
+    key: 'programbrief',
     ellipsis: true
   },
   {
-    title: '合同额',
-    dataIndex: 'programquota'
+    title: '合同额(元)',
+    dataIndex: 'programquota',
+    key: 'programquota'
   },
   {
     title: '项目经理',
-    dataIndex: 'programmag'
+    dataIndex: 'programmag',
+    key: 'programmag'
   },
   {
-    title: '项目周期',
-    dataIndex: 'programduration'
+    title: '项目周期(天)',
+    dataIndex: 'programduration',
+    key: 'programduration'
   },
   {
     title: '项目开始时间',
-    dataIndex: 'programstarttime'
+    dataIndex: 'programstarttime',
+    key: 'programstarttime'
+  },
+  {
+    title: '操作',
+    key: 'action',
+    scopedSlots: { customRender: 'action' }
   }
 ]
 const data = []
